@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-// ÆÄÀÏ ½ºÆ®¸²
-// ÆÄÀÏÀ» ´Ù·ê ¶§ µ¥ÀÌÅÍ°¡ ¿òÁ÷ÀÌ´Â °ÍÀ» Èå¸§(stream)À¸·Î ºñÀ¯ÇÑ °Í
-// ÆÄÀÏÀ» ´Ù·ç±â À§ÇØ¼­´Â System.IO(Input/Output) ³×ÀÓ½ºÆäÀÌ½º¿¡ ÀÖ´Â FileStream Å¬·¡½º »ç¿ë
+// íŒŒì¼ ìŠ¤íŠ¸ë¦¼
+// íŒŒì¼ì„ ë‹¤ë£° ë•Œ ë°ì´í„°ê°€ ì›€ì§ì´ëŠ” ê²ƒì„ íë¦„(stream)ìœ¼ë¡œ ë¹„ìœ í•œ ê²ƒ
+// íŒŒì¼ì„ ë‹¤ë£¨ê¸° ìœ„í•´ì„œëŠ” System.IO(Input/Output) ë„¤ì„ìŠ¤í˜ì´ìŠ¤ì— ìˆëŠ” FileStream í´ë˜ìŠ¤ ì‚¬ìš©
 
 public class TextFileStreamExample : MonoBehaviour
 {    
     void Start()
     {
-        // < ÆÄÀÏ ¿­±â >
-        // ¸Å°³º¯¼ö
-        // 1. ¾î¶² ÆÄÀÏ?        (ÆÄÀÏÀÇ °æ·Î)
-        // 2. ¾î¶»°Ô ´Ù·ê²¨³Ä?  (ÆÄÀÏÀÇ ¸ğµå)
+        // < íŒŒì¼ ì—´ê¸° >
+        // ë§¤ê°œë³€ìˆ˜
+        // 1. ì–´ë–¤ íŒŒì¼?        (íŒŒì¼ì˜ ê²½ë¡œ)
+        // 2. ì–´ë–»ê²Œ ë‹¤ë£°êº¼ëƒ?  (íŒŒì¼ì˜ ëª¨ë“œ)
         FileStream fs = new FileStream("C:/Users/USER/Desktop/test.txt", FileMode.Create);
-        // FileMode.Create: ÆÄÀÏÀÌ ¾ø´Ù¸é »õ·Î »ı¼º, ÀÖÀ¸¸é µ¤¾î¾º¿î´Ù.
+        // FileMode.Create: íŒŒì¼ì´ ì—†ë‹¤ë©´ ìƒˆë¡œ ìƒì„±, ìˆìœ¼ë©´ ë®ì–´ì”Œìš´ë‹¤.
 
-        // < ÆÄÀÏ ¾²±â >
-        // ÅØ½ºÆ® ÆÄÀÏÀ» ¾µ ¶§´Â "StreamWriter" Å¬·¡½º »ç¿ë
+        // < íŒŒì¼ ì“°ê¸° >
+        // í…ìŠ¤íŠ¸ íŒŒì¼ì„ ì“¸ ë•ŒëŠ” "StreamWriter" í´ë˜ìŠ¤ ì‚¬ìš©
         StreamWriter sw = new StreamWriter(fs);
-        sw.WriteLine("¾È³çÇÏ¼¼¿ä");
-        sw.WriteLine("Á¦ ÀÌ¸§Àº ÀÌ¼º¹ÎÀÔ´Ï´Ù.");
-        sw.WriteLine("¸¸³ª¼­ ¹İ°¡¿ö¿ä.");
-        sw.Close(); // ÆÄÀÏÀ» ´Ù ¾²¸é ²À ´İ¾ÆÁà¾ß ÇÑ´Ù.
+        sw.WriteLine("ì•ˆë…•í•˜ì„¸ìš”");
+        sw.WriteLine("ì œ ì´ë¦„ì€ ì´ì„±ë¯¼ì…ë‹ˆë‹¤.");
+        sw.WriteLine("ë§Œë‚˜ì„œ ë°˜ê°€ì›Œìš”.");
+        sw.Close(); // íŒŒì¼ì„ ë‹¤ ì“°ë©´ ê¼­ ë‹«ì•„ì¤˜ì•¼ í•œë‹¤.
 
-        // < ÆÄÀÏ ÀĞ±â >
-        fs = new FileStream("C:/Users/USER/Desktop/test.txt", FileMode.Open); // ´Ù½Ã ¿­±â
+        // < íŒŒì¼ ì½ê¸° >
+        fs = new FileStream("C:/Users/USER/Desktop/test.txt", FileMode.Open); // ë‹¤ì‹œ ì—´ê¸°
         StreamReader sr = new StreamReader(fs);
         while (true)
         {
