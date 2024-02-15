@@ -22,27 +22,27 @@ public class TextFileStreamExample : MonoBehaviour
         // < 파일 쓰기 >
         // 텍스트 파일을 쓸 때는 "StreamWriter" 클래스 사용
         StreamWriter sw = new StreamWriter(fs);
-        try
+        /*try
         {
             sw.WriteLine("안녕하세요");
             sw.WriteLine("제 이름은 이성민입니다.");
             sw.WriteLine("만나서 반가워요.");
             return;
-        }
-        catch (Exception e)
+        }*/
+        /*catch (Exception e)
         {
             return;
         }
         finally
         {
             sw.Close(); // 파일을 다 쓰면 꼭 닫아줘야 한다.
-        }
+        }*/
 
        
-
+/*
         // < 파일 읽기 >
-        fs = new FileStream("C:/Users/USER/Desktop/test.txt", FileMode.Open); // 다시 열기
-        StreamReader sr = new StreamReader(fs);
+        //fs = new FileStream("C:/Users/USER/Desktop/test.txt", FileMode.Open); // 다시 열기
+        //StreamReader sr = new StreamReader(fs);
         while (true)
         {
             string line = sr.ReadLine();
@@ -52,6 +52,6 @@ public class TextFileStreamExample : MonoBehaviour
             }
             Debug.Log(line);
         }
-        sr.Close();
+        sr.Close();*/
     }
 }
